@@ -13,7 +13,7 @@
     </main>
 
     <footer class="app-footer">
-      <p>&copy; 2025 EPC-QR Decoder</p>
+      <p>2025 EPC-QR Decoder</p>
     </footer>
   </div>
 </template>
