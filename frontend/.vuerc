@@ -1,0 +1,6 @@
+{
+  "name": "epc-qr-decoder-frontend",
+  "displayName": "EPC-QR Decoder Frontend",
+  "description": "Vue 3 + Vite frontend for EPC-QR code decoding backend",
+  "version": "0.0.1"
+}
