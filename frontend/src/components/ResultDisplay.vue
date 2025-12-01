@@ -187,7 +187,7 @@ export default {
   overflow-x: auto;
   font-size: 12px;
   line-height: 1.4;
-  max-height: 200px;
+  max-height: 250px;
   overflow-y: auto;
   margin: 0;
 }
