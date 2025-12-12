@@ -1,0 +1,1 @@
+docker build -t hellsfoul/girodecoder-backend -f Dockerfile .

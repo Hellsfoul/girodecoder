@@ -1,0 +1,1 @@
+docker compose -p girodecoder -f docker-compose.yaml up -d
