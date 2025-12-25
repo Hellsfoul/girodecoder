@@ -7,7 +7,7 @@
         <line x1="12" y1="3" x2="12" y2="15"></line>
       </svg>
       <h2>Drop an image here</h2>
-      <p>or click to select</p>
+      <p>paste from clipboard, or click to select</p>
       <input type="file" @change="handleFileInput" accept="image/*" ref="fileInput" style="display: none">
       <button @click="openFileDialog" class="select-btn">Select Image</button>
     </div>
@@ -46,6 +46,12 @@ export default {
       error: null
     }
   },
+  mounted() {
+    window.addEventListener('paste', this.handlePaste)
+  },
+  beforeUnmount() {
+    window.removeEventListener('paste', this.handlePaste)
+  },
   methods: {
     openFileDialog() {
       this.$refs.fileInput.click();
@@ -64,6 +70,17 @@ export default {
         this.processFile(files[0])
       }
     },
+    handlePaste(e) {
+      const items = e.clipboardData.items
+      for (let i = 0; i < items.length; i++) {
+        const item = items[i]
+        if (item.type.startsWith('image/')) {
+          const file = item.getAsFile()
+          this.processFile(file)
+          break // Only process the first image
+        }
+      }
+    },
     processFile(file) {
       if (!file.type.startsWith('image/')) {
         this.error = 'Please drop an image file'
@@ -71,7 +88,7 @@ export default {
       }
       this.error = null
       this.currentFile = file
-      this.fileName = file.name
+      this.fileName = file.name || 'Pasted Image'
       this.fileSize = (file.size / 1024).toFixed(2) + ' KB'
       
       const reader = new FileReader()
