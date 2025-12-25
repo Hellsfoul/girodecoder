@@ -37,4 +37,3 @@ Services communicate via HTTP API, orchestrated with Docker Compose for producti
 - **CORS**: Handled by Spring Boot for frontend-backend communication
 
 Reference: [backend/src/main/java/de/hellsfoul/girodecoder/service/EpcDecoderService.java](backend/src/main/java/de/hellsfoul/girodecoder/service/EpcDecoderService.java) for decoding logic, [frontend/src/components/ImageDropZone.vue](frontend/src/components/ImageDropZone.vue) for upload handling.</content>
-<parameter name="filePath">c:\Users\Alexander\source\repos\girodecoder\.github\copilot-instructions.md
